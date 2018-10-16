@@ -1,6 +1,6 @@
 ---
 ---
-title: "BAHCS-10 Prelim Results"
+title: "Passport"
 output: html_document
 ---
 
@@ -44,16 +44,19 @@ sum(is.na(InfoMC10_PassPort_10_18$AvatarID))
 InfoMC10_PassPort_10_18$AvatarID = as.numeric(InfoMC10_PassPort_10_18$AvatarID)
 CIL_CKYFull$AvatarID = as.numeric(CIL_CKYFull$AvatarID)
 
-HCS_Passport = merge(CIL_CKYFull, InfoMC10_PassPort_10_18, by = "AvatarID")
-dim(HCS_Passport)
-head(HCS_Passport)
+
 ```
 Ok now get rid of the extra pieces for 
 ```{r}
+HCS_Passport = merge(CIL_CKYFull, InfoMC10_PassPort_10_18, by = "AvatarID")
+dim(HCS_Passport)
+head(HCS_Passport)
 
+sum(CIL_CKYFull$AvatarID == 186)
+sum(CIL_CKYFull$AvatarID == 504)
+HCS_Passport
 
-
-
+sum(CIL_CKYFull$AvatarID == 504)
 ```
 
 
